@@ -1,7 +1,7 @@
 {
   "name": "moment-payperiod",
   "version": "0.0.1",
-  "description": "PayPeriod.js generates a range of dates based on standard pay period definitions",
+  "description": "moment-payperiod.js generates a range of dates based on standard pay period definitions",
   "homepage": "https://github.com/fieldphone/moment-payperiod.js",
   "author": "Aaron Renoir",
   "keywords": ["payperiod", "date", "date range"],

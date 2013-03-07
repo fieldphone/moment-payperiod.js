@@ -1,18 +1,16 @@
-moment =
-  if require?
-    require "moment"
-  else
-    @moment
+if require?
+  moment = require('moment')
+else
+  moment = this.moment
 
 class PayPeriod
   
-  constructor: (yearStart, type, format) ->
-    @format = format || 'YYYY-MM-DD'
-    @yearStart = @_initDate(yearStart)
+  constructor: (date, type, options) ->
+    options ||= {}
+    @format = options.format || 'YYYY-MM-DD'
+    @yearStart = @_initDate(options.yearStart)
     @type = type || 'weekly'
-  
-  for: (d) ->
-    date = @_initDate(d)
+    
     switch @type
       when 'weekly' then @_weekly(date)
       when 'biweekly' then @_biweekly(date)
@@ -52,9 +50,9 @@ class PayPeriod
     d1.unix() <= d2.unix()
   
   _formatResult: (start, stop) ->
-    start: start.format( @format )
-    stop:   stop.format( @format )
-    days:  @_days(start, stop)
+    @start = start.format( @format )
+    @stop  = stop.format( @format )
+    @days  = @_days(start, stop)
   
   _days: (start, stop) ->
     s = start.clone()
@@ -65,10 +63,11 @@ class PayPeriod
     a
   
   _initDate: (date) ->
+    date ||= moment
     if moment.isMoment(date) 
       date 
     else 
       moment(date, @format)
   
-moment.fn.payperiod = (yearStart, type) ->
-  new PayPeriod yearStart, type
+moment.fn.payperiod = (type, options) ->
+  new PayPeriod( @, type, options )

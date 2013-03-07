@@ -1,0 +1,32 @@
+{
+  "name": "moment-payperiod",
+  "version": "0.0.1",
+  "description": "PayPeriod.js generates a range of dates based on standard pay period definitions",
+  "homepage": "https://github.com/fieldphone/moment-payperiod.js",
+  "author": "Aaron Renoir",
+  "keywords": ["payperiod", "date", "date range"],
+  "main": "./lib/moment-payperiod",
+  "directories":  { "lib" : "./lib" },
+  "engines": { 
+    "node": "*" 
+  },
+  "dependencies": {
+    "moment": ">= 1.7"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.5",
+    "mocha" : "1.3.0",
+    "should": "0.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fieldphone/moment-payperiod.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fieldphone/moment-payperiod.js/issues"
+  },
+  "licenses":{
+    "type": "Public Domain",
+    "url": "https://github.com/fieldphone/moment-payperiod.js/raw/master/UNLICENSE"
+  }
+}

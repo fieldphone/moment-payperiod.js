@@ -1,6 +1,6 @@
 #moment-payperiod.js 
 
-This plugin provides methods to generate date ranges based on standard pay-period definitions.
+This [Moment.js](https://github.com/timrwood/moment) plugin provides methods to generate date ranges based on standard pay-period definitions.
 
 
 Examples

@@ -47,10 +47,10 @@ Increments two weeks at a time from yearStart. If year start is on a Monday ever
 
 Returns payperiod eater for the 1st through the 15th or from the 16th to the end of month.
 
-#TODO add option to change cutoff day
+
 
 ``` coffeescript
-  #
+  #TODO add option to change cutoff day
   pp = moment("2013-03-01").payperiod('semimonthly')
   pp.start #returns "2013-03-01"
   pp.stop  #returns "2013-03-15"

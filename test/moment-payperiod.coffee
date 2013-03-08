@@ -17,7 +17,18 @@ describe "weekly", ->
     pp.start.should.eql "2013-02-25"
     pp.stop.should.eql "2013-03-03"
     pp.days.length.should.eql 7
-
+  
+  it "should return payperiod that starts on a monday and ends on a sunday if date is in middle of week", ->
+    pp = moment("2013-02-27").payperiod("weekly", {epoch: "2009-01-05"})
+    pp.start.should.eql "2013-02-25"
+    pp.stop.should.eql "2013-03-03"
+    pp.days.length.should.eql 7
+  
+  it "should return payperiod that starts on a monday and ends on a sunday if date is at end of week", ->
+    pp = moment("2013-03-03").payperiod("weekly", {epoch: "2009-01-05"})
+    pp.start.should.eql "2013-02-25"
+    pp.stop.should.eql "2013-03-03"
+    pp.days.length.should.eql 7
 
 describe "biweekly", ->
   epoch = moment("2008-01-01")

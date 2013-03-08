@@ -13,17 +13,17 @@ Given a `moment` `payperiod` returns three attributes `start`, `stop` and `days`
 
 ### Weekly
 
-Increments one week from yearStart. If year start is on a Monday every weekly pay period will start on a monday and end on a sunday.
+Increments one week from epoch. If year start is on a Monday every weekly pay period will start on a monday and end on a sunday.
 
 ``` coffeescript
   #yearStart is a moday
-  pp = moment("2013-03-04").payperiod('weekly', {yearStart: '2011-01-11'})
+  pp = moment("2013-03-04").payperiod('weekly', {epoch: '2011-01-11'})
   pp.start #returns "2013-03-04"
   pp.stop  #returns "2013-03-10"
   pp.days  #returns [start..stop]
   
   #return payperiod for any date inclusively between start and stop
-  pp = moment("2013-03-08").payperiod('weekly', {yearStart: '2011-01-11'})
+  pp = moment("2013-03-08").payperiod('weekly', {epoch: '2011-01-11'})
   pp.start #returns "2013-03-04"
   pp.stop  #returns "2013-03-10"
   pp.days  #returns [start..stop]
@@ -32,11 +32,11 @@ Increments one week from yearStart. If year start is on a Monday every weekly pa
 
 ### BiWeekly
 
-Increments two weeks at a time from yearStart. If year start is on a Monday every biweekly pay period will start on a monday and end on a sunday.
+Increments two weeks at a time from epoch. If year start is on a Monday every biweekly pay period will start on a monday and end on a sunday.
 
 ``` coffeescript
   #
-  pp = moment("2013-03-25").payperiod('biweekly', {yearStart: '2011-01-11'})
+  pp = moment("2013-03-25").payperiod('biweekly', {epoch: '2011-01-11'})
   pp.start #returns "2013-03-25"
   pp.stop  #returns "2013-04-07"
   pp.days  #returns [start..stop]
